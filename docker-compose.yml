@@ -19,6 +19,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    entrypoint: >
+      sh -c "chmod -R 0777 /var/www/html/tmp /var/www/html/logs && php-fpm"
     environment:
       DATABASE_URL: "postgres://kanban:kanban@db:5432/kanban"
       DATABASE_TEST_URL: "postgres://kanban:kanban@db:5432/test_kanban"

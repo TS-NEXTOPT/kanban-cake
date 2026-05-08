@@ -5,6 +5,11 @@ use Migrations\AbstractSeed;
 
 class CommentsSeed extends AbstractSeed
 {
+    public function getDependencies(): array
+    {
+        return ['TasksSeed', 'UsersSeed'];
+    }
+
     public function run(): void
     {
         $data = [

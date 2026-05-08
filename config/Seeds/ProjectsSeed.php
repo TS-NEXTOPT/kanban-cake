@@ -5,6 +5,11 @@ use Migrations\AbstractSeed;
 
 class ProjectsSeed extends AbstractSeed
 {
+    public function getDependencies(): array
+    {
+        return ['UsersSeed'];
+    }
+
     public function run(): void
     {
         $data = [

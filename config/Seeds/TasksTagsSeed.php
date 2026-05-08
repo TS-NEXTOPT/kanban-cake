@@ -5,6 +5,11 @@ use Migrations\AbstractSeed;
 
 class TasksTagsSeed extends AbstractSeed
 {
+    public function getDependencies(): array
+    {
+        return ['TasksSeed', 'TagsSeed'];
+    }
+
     public function run(): void
     {
         $data = [

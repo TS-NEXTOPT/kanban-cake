@@ -5,6 +5,11 @@ use Migrations\AbstractSeed;
 
 class ProjectMembersSeed extends AbstractSeed
 {
+    public function getDependencies(): array
+    {
+        return ['UsersSeed', 'ProjectsSeed'];
+    }
+
     public function run(): void
     {
         // alice は project 3 に所属しない

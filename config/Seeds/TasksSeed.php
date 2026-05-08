@@ -5,6 +5,11 @@ use Migrations\AbstractSeed;
 
 class TasksSeed extends AbstractSeed
 {
+    public function getDependencies(): array
+    {
+        return ['UsersSeed', 'ProjectsSeed'];
+    }
+
     public function run(): void
     {
         $today = date('Y-m-d');
